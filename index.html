@@ -5,12 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Yukie Memorial Foundation</title>
 
-<!-- Favicon: using existing repository image YMF_logo.png -->
-<link rel="icon" href="YMF_logo.png" type="image/png">
-<link rel="icon" href="YMF_logo.png" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="YMF_logo.png">
-<meta name="theme-color" content="#0f6ab4">
-
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&display=swap');
 *{
@@ -675,80 +669,184 @@ footer p {
 </div>
 
 <div class="info-item">
-<div class="info-label">代表者</div>
-<div class="info-value">金 哲彦</div>
+<div class="info-label">所在地</div>
+<div class="info-value">142-0061<br>東京都品川区小山台一丁目25番13号</div>
 </div>
 
 <div class="info-item">
-<div class="info-label">主な活動</div>
-<div class="info-value">ランニング普及・健康増進支援</div>
+<div class="info-label">代表理事</div>
+<div class="info-value">金 哲彦</div>
 </div>
 </div>
 
-</div>
+<p style="margin-top: 30px; padding-top: 30px; border-top: 1px solid var(--border-light); color: var(--text-light); line-height: 1.9;">
+当団体は、2023年に卵巣がんのため56歳で他界した歯科医師故林幸枝の意志を引き継いで2024年に設立されました。<br>
+発症から9年間、長きにわたる闘病生活を通じて故人が体験したことを、今生きる人たちに届けることをミッションに活動していきます。<br>
+コンセプトはココロとカラダの健康を維持増進すること。<br>
+また、故人が生涯を通じて身を置いた、医療従事者の健康づくりにかかわる事業も行います。<br>
+</p>
 
 </div>
 </section>
 
-<section id="contact" class="contact-section">
+<section id="profile">
 <div class="container">
+<div class="card">
+<div class="profile">
 
-<div class="contact-card">
+<img src="kintetsuhiko2026.jpg" alt="プロランニングコーチ 金哲彦">
 
-<h2>お問い合わせ</h2>
+<div>
 
-<form class="contact-form">
-<div class="form-row">
-<label for="name">お名前</label>
-<input type="text" id="name" name="name" required>
-</div>
+<h2>代表理事プロフィール</h2>
 
-<div class="form-row">
-<label for="email">メールアドレス</label>
-<input type="email" id="email" name="email" required>
-</div>
-
-<div class="form-row">
-<label for="message">メッセージ</label>
-<textarea id="message" name="message" rows="6" required></textarea>
-</div>
-
-<div class="form-row">
-<button type="submit" class="btn-primary">送信</button>
-</div>
-</form>
+<p>
+1964年福岡県北九州市生まれ。<br><br>
+早稲田大学時代、無名ながら１年生で箱根駅伝の５区山登りに抜擢され３年時には区間新記録を樹立、早稲田の二連覇に貢献した。<br><br>
+1986年リクルートに入社してみずから陸上部を創設。
+フルマラソンでは別大マラソン3位。東京国際マラソン3位など選手として活躍後、1992年に故小出義雄監督率いる同クラブのコーチとなり有森裕子[...] 
+2002年市民ランナークラブの先駆けとなるNPO法人ニッポンランナーズを創設。
+現在は、プロランニングコーチとして全国各地のマラソン大会にゲスト参加するなどランニングの普及活動を行なっている。<br><br>
+また、テレビでは『ランスマ倶楽部』（NHK-BS）のＭＣをつとめ、駅伝･マラソンの解説者としても活動中。
+2019年NHK大河ドラマ『いだてん〜東京オリムピック噺』ではマラソン指導を担当した。
+東京およびパリオリンピックでも陸上競技・マラソンの解説をつとめた。<br><br>
+ランニングに関する著書は多数。
+近著は『新型コロナ時代のランニング』（KADOKAWA）『厚底シューズ時代の新・体幹ランニング』（講談社）など。
+</p>
 
 </div>
 
+</div>
 </div>
 </section>
 
-<footer>
-<p>&copy; 2024 一般財団法人 幸枝メモリアル財団. All rights reserved.</p>
+<!-- Contact form section inserted before footer -->
+<section id="contact-form" class="contact-section">
+  <div class="container">
+    <div class="card contact-card">
+      <h2>お問い合わせ</h2>
+      <p class="message-text">ご質問・ご相談はこちらのフォームからお送りください。送信すると既定のメールアプリが開き、kin_tetsuhiko@mac.com 宛てに�[...]
+
+      <form id="site-contact-form" class="contact-form" novalidate>
+        <div class="form-row">
+          <label for="cf-name">お名前（必須）</label>
+          <input type="text" id="cf-name" name="name" required placeholder="例：山田 太郎">
+        </div>
+
+        <div class="form-row">
+          <label for="cf-email">メールアドレス（必須）</label>
+          <input type="email" id="cf-email" name="email" required placeholder="your@example.com">
+        </div>
+
+        <div class="form-row">
+          <label for="cf-subject">件名</label>
+          <input type="text" id="cf-subject" name="subject" placeholder="お問い合わせの件名">
+        </div>
+
+        <div class="form-row">
+          <label for="cf-message">本文（必須）</label>
+          <textarea id="cf-message" name="message" rows="6" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:center;margin-top:18px;">
+          <button type="submit" class="btn-primary">送信（メールアプリを開く）</button>
+          <div id="contact-result" aria-live="polite" style="color:var(--primary);font-weight:600;"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer id="contact">
+<p>© All rights reserved 2026 一般財団法人幸枝メモリアル財団</p>
 </footer>
 
 <script>
-// hamburger menu toggle
-const hamburger = document.querySelector('.hamburger');
-const nav = document.querySelector('.nav');
+// Mobile hamburger menu toggle
+(function(){
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.getElementById('main-nav');
+    if(!hamburger || !nav) return;
 
-if (hamburger) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('open');
+    hamburger.addEventListener('click', function(e){
+        const expanded = this.classList.toggle('open');
         nav.classList.toggle('open');
-        hamburger.setAttribute('aria-expanded', hamburger.classList.contains('open'));
+        const isOpen = this.classList.contains('open');
+        this.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
 
-    // Close menu when a link is clicked
-    const navLinks = nav.querySelectorAll('a');
-    navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            hamburger.classList.remove('open');
-            nav.classList.remove('open');
-            hamburger.setAttribute('aria-expanded', 'false');
+    // Close menu when clicking a nav link
+    nav.querySelectorAll('a').forEach(a=>{
+        a.addEventListener('click', ()=>{
+            if(nav.classList.contains('open')){
+                nav.classList.remove('open');
+                hamburger.classList.remove('open');
+                hamburger.setAttribute('aria-expanded','false');
+            }
         });
     });
-}
+
+    // Close when clicking outside
+    document.addEventListener('click', function(e){
+        if(!nav.classList.contains('open')) return;
+        const target = e.target;
+        if(!nav.contains(target) && !hamburger.contains(target)){
+            nav.classList.remove('open');
+            hamburger.classList.remove('open');
+            hamburger.setAttribute('aria-expanded','false');
+        }
+    });
+})();
+</script>
+
+<script>
+(function(){
+    const form = document.getElementById('site-contact-form');
+    const result = document.getElementById('contact-result');
+    const to = 'kin_tetsuhiko@mac.com';
+
+    if(!form) return;
+
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+        result.textContent = '';
+
+        const name = document.getElementById('cf-name').value.trim();
+        const email = document.getElementById('cf-email').value.trim();
+        const subject = document.getElementById('cf-subject').value.trim() || 'お問い合わせ（Webサイト）';
+        const message = document.getElementById('cf-message').value.trim();
+
+        if(!name){
+          result.textContent = 'お名前を入力してください';
+          return;
+        }
+        if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+          result.textContent = '有効なメールアドレスを入力してください';
+          return;
+        }
+        if(!message){
+          result.textContent = '本文を入力してください';
+          return;
+        }
+
+        // mailto: の本文を作る（URLエンコード）
+        const bodyLines = [
+          `お名前: ${name}`,
+          `メール: ${email}`,
+          '',
+          '----- メッセージ -----',
+          message
+        ];
+        const body = encodeURIComponent(bodyLines.join('\n'));
+        const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+        // メールアプリを開く
+        window.location.href = mailto;
+
+        // ユーザーに短い案内を表示
+        result.textContent = 'メールアプリが開きます。送信が完了したらページに戻ってください。';
+    });
+})();
 </script>
 
 </body>
