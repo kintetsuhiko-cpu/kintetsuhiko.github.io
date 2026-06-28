@@ -42,6 +42,49 @@ header{
     overflow: hidden;
 }
 
+/* Top bar: logo (left) + nav (right) */
+.topbar{
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    right: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 2;
+}
+
+.logo img{
+    height: 48px;
+    width: auto;
+}
+
+.nav ul{
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.nav a{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.nav a:hover{
+    background: rgba(255,255,255,0.08);
+}
+
+/* small screens: reduce logo size and stack nav into a toggle-friendly row */
+@media(max-width: 768px){
+    .topbar{ top: 12px; left: 12px; right: 12px; }
+    .logo img{ height:40px; }
+    .nav ul{ gap: 12px; }
+}
+
 header::before {
     content: '';
     position: absolute;
@@ -372,6 +415,24 @@ footer p {
 <body>
 
 <header>
+<!-- Topbar with logo and navigation -->
+<div class="topbar container">
+    <div class="logo">
+        <!-- Put YMF_logo.png in the repo root or adjust path -->
+        <a href="#home"><img src="YMF_logo.png" alt="YMFロゴ"></a>
+    </div>
+    <nav class="nav" aria-label="メインナビゲーション">
+        <ul>
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#news">NEWS</a></li>
+            <li><a href="#results">活動実績</a></li>
+            <li><a href="#blog">BLOG</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">お問い合わせ</a></li>
+        </ul>
+    </nav>
+</div>
+
 <h1>わたしという大切な木を<br>優しく健やかに育てる<br>カラダとココロ</h1>
 <p>林ゆき枝 (1967.6.5〜2023.6.14)</p>
 </header>
@@ -493,7 +554,7 @@ footer p {
 1964年福岡県北九州市生まれ。<br><br>
 早稲田大学時代、無名ながら１年生で箱根駅伝の５区山登りに抜擢され３年時には区間新記録を樹立、早稲田の二連覇に貢献した。<br><br>
 1986年リクルートに入社してみずから陸上部を創設。
-フルマラソンでは別大マラソン3位。東京国際マラソン3位など選手として活躍後、1992年に故小出義雄監督率いる同クラブのコーチとなり有森裕子、高橋尚子など、数々のオリンピック選手を指導した。<br><br>
+フルマラソンでは別大マラソン3位。東京国際マラソン3位など選手として活躍後、1992年に故小出義雄監督率いる同クラブのコーチとなり有森裕子[...]
 2002年市民ランナークラブの先駆けとなるNPO法人ニッポンランナーズを創設。
 現在は、プロランニングコーチとして全国各地のマラソン大会にゲスト参加するなどランニングの普及活動を行なっている。<br><br>
 また、テレビでは『ランスマ倶楽部』（NHK-BS）のＭＣをつとめ、駅伝･マラソンの解説者としても活動中。
