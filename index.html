@@ -40,23 +40,31 @@ header{
     padding: 120px 20px;
     position: relative;
     overflow: hidden;
+    margin-top: 68px;
 }
 
 /* Top bar: logo (left) + nav (right) */
 .topbar{
-    position: absolute;
-    top: 18px;
-    left: 20px;
-    right: 20px;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    z-index: 5;
+    z-index: 100;
+    background: white;
+    padding: 12px 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
 .logo img{
     height: 48px;
     width: auto;
+}
+
+.logo a{
+    display: flex;
 }
 
 .nav ul{
@@ -66,7 +74,7 @@ header{
 }
 
 .nav a{
-    color: white;
+    color: var(--primary);
     text-decoration: none;
     font-weight: 600;
     padding: 8px 12px;
@@ -75,7 +83,8 @@ header{
 }
 
 .nav a:hover{
-    background: rgba(255,255,255,0.08);
+    background: rgba(15, 106, 180, 0.08);
+    color: var(--primary-dark);
 }
 
 /* Hamburger button */
@@ -83,7 +92,7 @@ header{
     display: none;
     background: transparent;
     border: none;
-    color: white;
+    color: var(--primary);
     cursor: pointer;
     width: 44px;
     height: 44px;
@@ -95,7 +104,7 @@ header{
     display: block;
     width: 22px;
     height: 2px;
-    background: white;
+    background: var(--primary);
     position: relative;
     transition: all 0.25s ease;
 }
@@ -106,7 +115,7 @@ header{
     left: 0;
     width: 22px;
     height: 2px;
-    background: white;
+    background: var(--primary);
     transition: all 0.25s ease;
 }
 .hamburger .bar::before{ top: -7px; }
@@ -114,7 +123,9 @@ header{
 
 /* small screens: show hamburger and hide horizontal nav */
 @media(max-width: 768px){
-    .topbar{ top: 12px; left: 12px; right: 12px; }
+    .topbar{ 
+        padding: 12px; 
+    }
     .logo img{ height:40px; }
     .nav ul{ gap: 12px; }
 
@@ -131,18 +142,19 @@ header{
         flex-direction: column;
         gap: 8px;
         position: absolute;
-        top: 58px;
+        top: 100%;
         right: 12px;
-        background: rgba(255,255,255,0.06);
+        background: white;
         padding: 12px 14px;
         border-radius: 10px;
         min-width: 160px;
         box-shadow: 0 8px 24px rgba(0,0,0,0.18);
-        backdrop-filter: blur(6px);
+        border: 1px solid var(--border-light);
     }
     .nav.open a{
         display:block;
         padding: 8px 10px;
+        color: var(--primary);
     }
 
     /* animate hamburger to X when open */
@@ -423,6 +435,7 @@ footer p {
 @media(max-width: 768px){
     header {
         padding: 80px 20px;
+        margin-top: 60px;
     }
 
     header h1{
@@ -486,9 +499,7 @@ footer p {
 </head>
 <body>
 
-<header id="home">
-<!-- Topbar with logo and navigation -->
-<div class="topbar container">
+<div class="topbar">
     <div class="logo">
         <!-- Put YMF_logo.png in the repo root or adjust path -->
         <a href="#home"><img src="YMF_logo.png" alt="YMFロゴ"></a>
@@ -508,7 +519,8 @@ footer p {
     </nav>
 </div>
 
-<h1>私というかけがえのない木を<br>優しく健やかに育てる<br>カラダとココロ</h1>
+<header id="home">
+<h1>わたしという大切な木を<br>優しく健やかに育てる<br>カラダとココロ</h1>
 <p>林ゆき枝 (1967.6.5〜2023.6.14)</p>
 </header>
 
