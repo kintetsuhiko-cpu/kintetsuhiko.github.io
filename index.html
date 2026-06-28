@@ -675,4 +675,81 @@ footer p {
 </div>
 
 <div class="info-item">
-{
+<div class="info-label">代表者</div>
+<div class="info-value">金 哲彦</div>
+</div>
+
+<div class="info-item">
+<div class="info-label">主な活動</div>
+<div class="info-value">ランニング普及・健康増進支援</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</section>
+
+<section id="contact" class="contact-section">
+<div class="container">
+
+<div class="contact-card">
+
+<h2>お問い合わせ</h2>
+
+<form class="contact-form">
+<div class="form-row">
+<label for="name">お名前</label>
+<input type="text" id="name" name="name" required>
+</div>
+
+<div class="form-row">
+<label for="email">メールアドレス</label>
+<input type="email" id="email" name="email" required>
+</div>
+
+<div class="form-row">
+<label for="message">メッセージ</label>
+<textarea id="message" name="message" rows="6" required></textarea>
+</div>
+
+<div class="form-row">
+<button type="submit" class="btn-primary">送信</button>
+</div>
+</form>
+
+</div>
+
+</div>
+</section>
+
+<footer>
+<p>&copy; 2024 一般財団法人 幸枝メモリアル財団. All rights reserved.</p>
+</footer>
+
+<script>
+// hamburger menu toggle
+const hamburger = document.querySelector('.hamburger');
+const nav = document.querySelector('.nav');
+
+if (hamburger) {
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('open');
+        nav.classList.toggle('open');
+        hamburger.setAttribute('aria-expanded', hamburger.classList.contains('open'));
+    });
+
+    // Close menu when a link is clicked
+    const navLinks = nav.querySelectorAll('a');
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            hamburger.classList.remove('open');
+            nav.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+        });
+    });
+}
+</script>
+
+</body>
+</html>
