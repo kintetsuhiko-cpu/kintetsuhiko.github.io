@@ -501,12 +501,13 @@ footer p {
   background: linear-gradient(180deg, #fbfeff, #ffffff);
 }
 .contact-card{
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 36px;
-  border-radius: 14px;
-  box-shadow: 0 12px 40px rgba(15,106,180,0.06);
+  /* Match .card sizing and style */
+  width: 100%;
+  padding: 50px;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
   border: 1px solid rgba(0,0,0,0.04);
+  background: var(--bg-white);
 }
 .contact-form .form-row{
   margin-top: 14px;
@@ -840,7 +841,7 @@ footer p {
         window.location.href = mailto;
 
         // ユーザーに短い案内を表示
-        result.textContent = 'メールアプリが開きます。送信が完了したらページに戻ってください。';
+n        result.textContent = 'メールアプリが開きます。送信が完了したらページに戻ってください。';
     });
 })();
 </script>
