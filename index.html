@@ -20,48 +20,10 @@ body{
 }
 
 header{
-    position: relative;
-    background-image:'hawaii_photo.jpg'); /* 画像パスを必要に応じて変更 */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: white;
-    text-align: center;
-    padding: 120px 20px;
-    min-height: 320px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-}
-
-/* 文字を読みやすくする半透明オーバーレイ */
-header::before{
-    content: "";
-    position: absolute;
-    inset: 0; /* top:0; right:0; bottom:0; left:0; と同じ */
-    background: rgba(0,0,0,0.32); /* 明るさ調整：0.2〜0.5 を調整してください */
-    z-index: 0;
-}
-
-/* ヘッダ内テキストをオーバーレイの上に出す */
-header h1,
-header p{
-    position: relative;
-    z-index: 1;
-    margin: 0;
-}
-
-/* レスポンシブ調整（必要に応じて既存の @media と統合してください） */
-@media(max-width:768px){
-    header{
-        padding: 80px 20px;
-        min-height: 220px;
-    }
-    header h1{ font-size: 36px; }
-}
-</style>
+    background:linear-gradient(135deg,#0f6ab4,#25b8d8);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
 }
 
 header h1{
@@ -257,7 +219,7 @@ font-size:36px;
 </p>
 
 </div>
-</div>
+<div>
 <section>
 <div class="container">
 
@@ -274,7 +236,7 @@ font-size:36px;
 <br>
 ​代表理事　金 哲彦<br>
 <br>
-当団体は、卵巣がんのため56歳で他界した歯科医師故林幸枝の意志を引き継いで設立されました。<br>
+当団体は、卵巣がんのため56歳で他界した歯科医師故林幸枝の意志を引き継いで設立されました。
 人々のココロとカラダの健康維持と増進に関わるあらゆる事業を行います。<br>
 <br>
   
