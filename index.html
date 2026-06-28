@@ -494,6 +494,60 @@ footer p {
         padding-left: 12px;
     }
 }
+
+/* お問い合わせフォーム用スタイル */
+.contact-section{
+  padding: 80px 0;
+  background: linear-gradient(180deg, #fbfeff, #ffffff);
+}
+.contact-card{
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 36px;
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(15,106,180,0.06);
+  border: 1px solid rgba(0,0,0,0.04);
+}
+.contact-form .form-row{
+  margin-top: 14px;
+}
+.contact-form label{
+  display:block;
+  margin-bottom:6px;
+  color:var(--primary);
+  font-weight:600;
+  font-size:14px;
+}
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea{
+  width:100%;
+  padding:12px 14px;
+  border-radius:10px;
+  border:1px solid var(--border-light);
+  background:#fff;
+  font-size:15px;
+  color:var(--text-dark);
+  box-shadow:none;
+}
+.btn-primary{
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  color:#fff;
+  border:none;
+  padding:10px 18px;
+  border-radius:10px;
+  font-weight:700;
+  cursor:pointer;
+  box-shadow: 0 8px 20px rgba(15,106,180,0.12);
+}
+.btn-primary:hover{
+  transform: translateY(-2px);
+}
+@media(max-width:768px){
+  .contact-section{padding:40px 0;}
+  .contact-card{padding:20px;}
+}
+
 </style>
 
 </head>
@@ -662,6 +716,43 @@ footer p {
 </div>
 </section>
 
+<!-- Contact form section inserted before footer -->
+<section id="contact-form" class="contact-section">
+  <div class="container">
+    <div class="card contact-card">
+      <h2>お問い合わせ</h2>
+      <p class="message-text">ご質問・ご相談はこちらのフォームからお送りください。送信すると既定のメールアプリが開き、kin_tetsuhiko@mac.com 宛てにメールを作成します。</p>
+
+      <form id="site-contact-form" class="contact-form" novalidate>
+        <div class="form-row">
+          <label for="cf-name">お名前（必須）</label>
+          <input type="text" id="cf-name" name="name" required placeholder="例：山田 太郎">
+        </div>
+
+        <div class="form-row">
+          <label for="cf-email">メールアドレス（必須）</label>
+          <input type="email" id="cf-email" name="email" required placeholder="your@example.com">
+        </div>
+
+        <div class="form-row">
+          <label for="cf-subject">件名</label>
+          <input type="text" id="cf-subject" name="subject" placeholder="お問い合わせの件名">
+        </div>
+
+        <div class="form-row">
+          <label for="cf-message">本文（必須）</label>
+          <textarea id="cf-message" name="message" rows="6" required placeholder="お問い合わせ内容をご記入ください"></textarea>
+        </div>
+
+        <div style="display:flex;gap:12px;align-items:center;margin-top:18px;">
+          <button type="submit" class="btn-primary">送信（メールアプリを開く）</button>
+          <div id="contact-result" aria-live="polite" style="color:var(--primary);font-weight:600;"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
 <footer id="contact">
 <p>© All rights reserved 2026 一般財団法人幸枝メモリアル財団</p>
 </footer>
@@ -700,6 +791,56 @@ footer p {
             hamburger.classList.remove('open');
             hamburger.setAttribute('aria-expanded','false');
         }
+    });
+})();
+</script>
+
+<script>
+(function(){
+    const form = document.getElementById('site-contact-form');
+    const result = document.getElementById('contact-result');
+    const to = 'kin_tetsuhiko@mac.com';
+
+    if(!form) return;
+
+    form.addEventListener('submit', function(e){
+        e.preventDefault();
+        result.textContent = '';
+
+        const name = document.getElementById('cf-name').value.trim();
+        const email = document.getElementById('cf-email').value.trim();
+        const subject = document.getElementById('cf-subject').value.trim() || 'お問い合わせ（Webサイト）';
+        const message = document.getElementById('cf-message').value.trim();
+
+        if(!name){
+          result.textContent = 'お名前を入力してください';
+          return;
+        }
+        if(!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
+          result.textContent = '有効なメールアドレスを入力してください';
+          return;
+        }
+        if(!message){
+          result.textContent = '本文を入力してください';
+          return;
+        }
+
+        // mailto: の本文を作る（URLエンコード）
+        const bodyLines = [
+          `お名前: ${name}`,
+          `メール: ${email}`,
+          '',
+          '----- メッセージ -----',
+          message
+        ];
+        const body = encodeURIComponent(bodyLines.join('\n'));
+        const mailto = `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+        // メールアプリを開く
+        window.location.href = mailto;
+
+        // ユーザーに短い案内を表示
+        result.textContent = 'メールアプリが開きます。送信が完了したらページに戻ってください。';
     });
 })();
 </script>
